@@ -4,12 +4,7 @@ describe('Product Inventory Functionality', () => {
   it('AUTO-TC-007 - Verify inventory page loads successfully', () => {
 
     // Step 1: Open SauceDemo
-    cy.visit('/')
-
-    // Step 2: Login with valid credentials
-    cy.get('[data-test="username"]').type('standard_user')
-    cy.get('[data-test="password"]').type('secret_sauce')
-    cy.get('[data-test="login-button"]').click()
+   cy.login()
 
     // Step 3: Verify inventory page URL
     cy.url().should('include', '/inventory.html')
@@ -64,12 +59,7 @@ it('AUTO-TC-008 - Verify product names are displayed correctly', () => {
 it('AUTO-TC-009 - Verify product prices are displayed correctly', () => {
 
   // Step 1: Open SauceDemo
-  cy.visit('/')
-
-  // Step 2: Login with valid credentials
-  cy.get('[data-test="username"]').type('standard_user')
-  cy.get('[data-test="password"]').type('secret_sauce')
-  cy.get('[data-test="login-button"]').click()
+ cy.login()
 
   // Step 3: Verify inventory page
   cy.url().should('include', '/inventory.html')
@@ -110,12 +100,7 @@ it('AUTO-TC-009 - Verify product prices are displayed correctly', () => {
 it('AUTO-TC-010 - Sort products by price low to high', () => {
 
   // Step 1: Open SauceDemo
-  cy.visit('/')
-
-  // Step 2: Login
-  cy.get('[data-test="username"]').type('standard_user')
-  cy.get('[data-test="password"]').type('secret_sauce')
-  cy.get('[data-test="login-button"]').click()
+  cy.login()
 
   // Step 3: Verify inventory page
   cy.url().should('include', '/inventory.html')
@@ -148,12 +133,7 @@ it('AUTO-TC-010 - Sort products by price low to high', () => {
 it('AUTO-TC-011 - Sort products by price high to low', () => {
 
   // Step 1: Open SauceDemo
-  cy.visit('/')
-
-  // Step 2: Login with valid credentials
-  cy.get('[data-test="username"]').type('standard_user')
-  cy.get('[data-test="password"]').type('secret_sauce')
-  cy.get('[data-test="login-button"]').click()
+  cy.login()
 
   // Step 3: Verify inventory page
   cy.url().should('include', '/inventory.html')
@@ -186,12 +166,7 @@ it('AUTO-TC-011 - Sort products by price high to low', () => {
 it('AUTO-TC-012 - Verify product details page', () => {
 
   // Step 1: Open SauceDemo
-  cy.visit('/')
-
-  // Step 2: Login
-  cy.get('[data-test="username"]').type('standard_user')
-  cy.get('[data-test="password"]').type('secret_sauce')
-  cy.get('[data-test="login-button"]').click()
+  cy.login()
 
   // Step 3: Verify inventory page
   cy.url().should('include', '/inventory.html')

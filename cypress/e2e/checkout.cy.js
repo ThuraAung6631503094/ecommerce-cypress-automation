@@ -4,12 +4,7 @@ describe('Checkout Functionality', () => {
   it('AUTO-TC-017 - Complete successful checkout', () => {
 
     // Step 1: Open SauceDemo
-    cy.visit('/')
-
-    // Step 2: Login with valid credentials
-    cy.get('[data-test="username"]').type('standard_user')
-    cy.get('[data-test="password"]').type('secret_sauce')
-    cy.get('[data-test="login-button"]').click()
+    cy.login()
 
     // Step 3: Verify inventory page
     cy.url().should('include', '/inventory.html')
@@ -77,12 +72,7 @@ describe('Checkout Functionality', () => {
 it('AUTO-TC-018 - Checkout without first name', () => {
 
   // Step 1: Open SauceDemo
-  cy.visit('/')
-
-  // Step 2: Login with valid credentials
-  cy.get('[data-test="username"]').type('standard_user')
-  cy.get('[data-test="password"]').type('secret_sauce')
-  cy.get('[data-test="login-button"]').click()
+  cy.login()
 
   // Step 3: Verify inventory page
   cy.url().should('include', '/inventory.html')
@@ -125,12 +115,7 @@ it('AUTO-TC-018 - Checkout without first name', () => {
 it('AUTO-TC-019 - Checkout without last name', () => {
 
   // Step 1: Open SauceDemo
-  cy.visit('/')
-
-  // Step 2: Login with valid credentials
-  cy.get('[data-test="username"]').type('standard_user')
-  cy.get('[data-test="password"]').type('secret_sauce')
-  cy.get('[data-test="login-button"]').click()
+  cy.login()
 
   // Step 3: Verify inventory page
   cy.url().should('include', '/inventory.html')
@@ -173,13 +158,8 @@ it('AUTO-TC-019 - Checkout without last name', () => {
 it('AUTO-TC-020 - Checkout without postal code', () => {
 
   // Step 1: Open SauceDemo
-  cy.visit('/')
-
-  // Step 2: Login with valid credentials
-  cy.get('[data-test="username"]').type('standard_user')
-  cy.get('[data-test="password"]').type('secret_sauce')
-  cy.get('[data-test="login-button"]').click()
-
+  cy.login()
+  
   // Step 3: Verify inventory page
   cy.url().should('include', '/inventory.html')
 

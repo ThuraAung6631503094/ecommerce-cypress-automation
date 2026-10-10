@@ -4,12 +4,7 @@ describe('Shopping Cart Functionality', () => {
   it('AUTO-TC-013 - Add one product to cart', () => {
 
     // Step 1: Open SauceDemo
-    cy.visit('/')
-
-    // Step 2: Login with valid credentials
-    cy.get('[data-test="username"]').type('standard_user')
-    cy.get('[data-test="password"]').type('secret_sauce')
-    cy.get('[data-test="login-button"]').click()
+   cy.login()
 
     // Step 3: Verify inventory page
     cy.url().should('include', '/inventory.html')
@@ -43,12 +38,7 @@ describe('Shopping Cart Functionality', () => {
 it('AUTO-TC-014 - Add multiple products to cart', () => {
 
   // Step 1: Open SauceDemo
-  cy.visit('/')
-
-  // Step 2: Login with valid credentials
-  cy.get('[data-test="username"]').type('standard_user')
-  cy.get('[data-test="password"]').type('secret_sauce')
-  cy.get('[data-test="login-button"]').click()
+  cy.login()
 
   // Step 3: Verify inventory page
   cy.url().should('include', '/inventory.html')
@@ -90,12 +80,7 @@ it('AUTO-TC-014 - Add multiple products to cart', () => {
 it('AUTO-TC-015 - Remove product from cart', () => {
 
   // Step 1: Open SauceDemo
-  cy.visit('/')
-
-  // Step 2: Login with valid credentials
-  cy.get('[data-test="username"]').type('standard_user')
-  cy.get('[data-test="password"]').type('secret_sauce')
-  cy.get('[data-test="login-button"]').click()
+  cy.login()
 
   // Step 3: Verify inventory page
   cy.url().should('include', '/inventory.html')
@@ -147,12 +132,7 @@ it('AUTO-TC-015 - Remove product from cart', () => {
 it('AUTO-TC-016 - Verify product details in shopping cart', () => {
 
   // Step 1: Open SauceDemo
-  cy.visit('/')
-
-  // Step 2: Login with valid credentials
-  cy.get('[data-test="username"]').type('standard_user')
-  cy.get('[data-test="password"]').type('secret_sauce')
-  cy.get('[data-test="login-button"]').click()
+  cy.login()
 
   // Step 3: Verify inventory page
   cy.url().should('include', '/inventory.html')
