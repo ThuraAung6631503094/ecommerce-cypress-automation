@@ -1,0 +1,23 @@
+{
+  "name": "ecommerce-cypress-automation",
+  "version": "1.0.0",
+  "description": "End-to-end automation testing of an e-commerce web application using Cypress and JavaScript, covering login, product inventory, shopping cart, checkout, and regression testing.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThuraAung6631503094/ecommerce-cypress-automation.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ThuraAung6631503094/ecommerce-cypress-automation/issues"
+  },
+  "homepage": "https://github.com/ThuraAung6631503094/ecommerce-cypress-automation#readme",
+  "devDependencies": {
+    "cypress": "^16.1.1"
+  }
+}
