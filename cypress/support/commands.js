@@ -1,22 +1,27 @@
 
 Cypress.Commands.add('login', (
-  username = 'standard_user',
-  password = 'secret_sauce'
+  username,
+  password
 ) => {
 
-  // Open SauceDemo login page
-  cy.visit('/')
+  cy.fixture('users').then((users) => {
 
-  // Enter username
-  cy.get('[data-test="username"]').type(username)
+    const loginUsername = username ?? users.validUser.username
+    const loginPassword = password ?? users.validUser.password
 
-  // Enter password
-  cy.get('[data-test="password"]').type(password)
+    cy.visit('/')
 
-  // Click login button
-  cy.get('[data-test="login-button"]').click()
+    cy.get('[data-test="username"]')
+      .type(loginUsername)
 
-  // Verify login was successful
-  cy.url().should('include', '/inventory.html')
+    cy.get('[data-test="password"]')
+      .type(loginPassword)
+
+    cy.get('[data-test="login-button"]')
+      .click()
+
+    cy.url().should('include', '/inventory.html')
+
+  })
 
 })

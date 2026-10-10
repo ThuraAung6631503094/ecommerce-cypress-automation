@@ -31,9 +31,20 @@ describe('Checkout Functionality', () => {
     cy.url().should('include', '/checkout-step-one.html')
 
     // Step 10: Enter customer information
-    cy.get('[data-test="firstName"]').type('Test')
-    cy.get('[data-test="lastName"]').type('Customer')
-    cy.get('[data-test="postalCode"]').type('57000')
+    
+cy.fixture('checkout-data').then((data) => {
+
+  cy.get('[data-test="firstName"]')
+    .type(data.validCustomer.firstName)
+
+  cy.get('[data-test="lastName"]')
+    .type(data.validCustomer.lastName)
+
+  cy.get('[data-test="postalCode"]')
+    .type(data.validCustomer.postalCode)
+
+})
+
 
     // Step 11: Click Continue
     cy.get('[data-test="continue"]').click()
@@ -159,7 +170,7 @@ it('AUTO-TC-020 - Checkout without postal code', () => {
 
   // Step 1: Open SauceDemo
   cy.login()
-  
+
   // Step 3: Verify inventory page
   cy.url().should('include', '/inventory.html')
 

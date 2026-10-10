@@ -4,7 +4,7 @@ describe('Product Inventory Functionality', () => {
   it('AUTO-TC-007 - Verify inventory page loads successfully', () => {
 
     // Step 1: Open SauceDemo
-   cy.login()
+cy.login()
 
     // Step 3: Verify inventory page URL
     cy.url().should('include', '/inventory.html')
